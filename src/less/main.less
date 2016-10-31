@@ -1,0 +1,391 @@
+@wmax: 1200px;
+@wmin: 990px;
+@yellow: #FED200;
+
+@colorHeader: #274972;; 
+@colorContent: #000; 
+@fsb: 15px;
+
+@fontB: HeliosCondBold;
+@fontR: HeliosCondRegular;
+
+
+.bgcontent() {
+	background: url(https://www.transparenttextures.com/patterns/otis-redding.png) repeat,
+	linear-gradient(to right, #284a73 0%,#2a5c88 48%,#284a73 100%); 
+}
+
+body {
+	color: #333;
+	font-size: @fsb;
+	background: #fff;
+	padding: 0px 0 0 0;
+	font-family: @fontR;
+}
+
+.wrapper {
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+.header {
+	font-family: @fontB;
+	padding: 7px 0 12px 0;
+	font-size: 0;	
+	&__about {
+		display: inline-block;
+		width: 320px;
+		color: @colorHeader;
+		text-transform: uppercase;
+		text-align: right;
+		padding: 45px 0 70px 0;
+		margin: 0;
+		vertical-align: top;
+		p {
+			margin: 0;
+			padding: 0;
+			font-size: 22px;
+		}
+		p:first-child {
+			font-size: 30px;
+		}
+	}
+	&__logo {
+		display: block;
+		position: absolute;	
+		bottom: -8px;
+		left: 320px;	
+		width: 309px;
+		height: 187px;
+		margin: 0;
+		background-image: url(img/logo.png);
+		z-index: 3;
+	}
+	&__phone {
+		display: inline-block;	
+		width: 270px;
+		color: @colorHeader;
+		font-size: 30px;
+		margin: 0;
+		vertical-align: baseline;
+		padding: 45px 0 45px 320px;
+		line-height: 25px;
+		&-item {
+			margin: 5px 0 0 0;
+			&--link {
+				display: inline-block;
+				margin: 5px 0 0 0;			
+				text-decoration: none;
+				font-family: @fontR;
+				text-transform: uppercase;
+				border-bottom: 1px dashed @colorHeader;
+				font-size: 17px;
+				color: @colorHeader;
+			}
+		}
+	}
+	&__fb-icon {
+		display: inline-block;
+		vertical-align: top;
+		width: 50px;
+		height: 50px;
+		padding: 0px 0 0 0;
+		margin: 35px 0 0 0;
+		background: url(img/fb-icon.png) no-repeat 0 0;
+		transition: all .4s;
+		transition-timing: ease-in-out;
+		&:hover {
+	  		transform: rotate(360deg);
+		} 
+	}
+}
+.top-menu {
+	background-color: rgb(60, 93, 132);
+	padding: 8px;
+	width: 100%;
+	z-index: 1;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	&__item {
+		display: inline-block;
+		margin: 0 15px;
+		a {
+			font-family: @fontR;
+			color: #fff;
+			text-transform: uppercase;
+			text-decoration: none;
+			font-size: @fsb;
+			&:hover {
+				color: #7a99be;
+				text-decoration: none;
+				transition: .3s;
+			}
+		}
+		&--offset {
+			margin-left: 400px;
+		}
+	}
+
+}
+
+.offer {
+	width: 100%;
+	height: 482px;
+	background: url(img/header-slide.png) no-repeat top center;
+	padding: 70px 0 0 0;
+	&__text {
+		font-family: @fontB;
+		font-size: 40px;
+		line-height: 45px;
+		color: #fff;
+		text-transform: uppercase;
+		width: 65%;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+		&--bg {
+			display: inline-block;
+			background-color: #ba454a;
+			padding: 7px 15px;
+			font-size: 20px;
+			line-height: 20px;
+			width: auto;
+			margin: 10px 0 20px 0;
+		}
+	}
+	.leadform { 
+		background-color: rgba(11, 37, 69, 0.8);
+		width: 480px;
+		padding: 10px;
+		margin: 0 0 40px 0;
+		&__wrapper--border {			
+			border: 1px dashed #aab5cb;
+			padding: 20px;
+		}
+		&__text {
+			color: #fff;
+			font-family: @fontB;
+			text-align: center;
+			font-size: 20px;
+			line-height: 35px;
+			text-transform: uppercase;
+			&--lg {
+				font-size: 30px;
+			}
+		}
+		&__form {
+			margin: 20px 0 0 0;
+			input[type=text] {
+				padding: 6px;
+				width: 220px;
+				outline: 0;
+			}
+			input[type=submit] {
+				padding: 6px;
+				border: 0;
+				cursor: pointer;
+				background-color: rgb(193, 39, 45);
+				font-family: @fontR;
+				color: #fff;
+				padding: 8px;
+				margin-left: 15px;
+				outline: 0;
+				&:hover {
+					background-color: rgb(181, 39, 45);
+				}
+				&:active {
+					background-color: rgb(155, 39, 45);
+					-ms-transform: translate(1px,2px); /* IE 9 */
+					-webkit-transform: translate(1px,2px); /* Safari */
+					transform: translate(1px,2px); /* Standard syntax */
+				}
+			}
+		}
+	}
+	.promo {
+		position: relative;
+		width: 100%;
+		height: 133px;
+		margin: 0 0 -67px 0;
+		box-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+		overflow: hidden;
+		z-index: 4;
+		&__banner-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;	
+			transition: all .4s;
+			transition-timing: ease-in-out;
+		}
+		&:hover .promo__banner-bg {
+			transform: scale(1.3) rotate(-5deg);
+		}
+		&__banner-text {
+			position: absolute;
+			right: 46px;
+			top: 0;
+			width: 592px;
+			height: 133px;
+			z-index: 3;
+			background: url(img/banner-shape.png) no-repeat top center;
+		}
+		&__link {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 133px;
+			z-index: 4;
+			background: url(img/offer-link.png) no-repeat top right;
+		}
+	}
+
+}
+
+.services {
+	.bgcontent();
+	color: #fff;
+	position: relative;
+	z-index: 2;
+	text-align: center;
+	&::before {
+		position: absolute;
+		content: " ";
+		top: -12px;
+		left: 0;
+		width: 100%;
+		height: 12px;
+		background: url(img/services-ear.png) repeat-x top center;
+	}
+	&__title {
+		font-size: 30px;
+		font-family: @fontB;
+		padding: 30px 0 50px 0;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	&__list {
+		font-size: 0;
+		overflow: hidden;
+		&-item {
+			display: inline-block;
+			vertical-align: top;
+			width: 25%;
+			list-style: none;
+			font-size: 15px;
+			&--bg a {
+				display: block;
+				height: 55px;
+				padding: 147px 0 0 0;
+				color: @colorHeader;
+				text-decoration: none;
+				text-transform: uppercase;
+				text-align: center;
+			}
+			&--one {
+				background: url(img/services_one.png) no-repeat top center;
+			}
+			&--two {
+				background: url(img/services_two.png) no-repeat top center;
+			}
+			&--three {
+				background: url(img/services_three.png) no-repeat top center;
+			}
+			&--four {
+				background: url(img/services_four.png) no-repeat top center;
+			}
+		}
+	}
+	.sub-menu {
+		overflow: hidden;
+		.menu-item {
+			margin: 10px 0;
+			list-style-type: none;
+			position: relative;
+			text-align: left;
+			&::before {
+				display: block;
+				position: absolute;
+				top: 4px;
+				left: -16px;
+				content: " ";
+				width: 8px;
+				height: 8px;
+				background: url(img/list-style.png) no-repeat top center;
+			}
+		}
+	}
+	.img__remont {
+		display: inline-block;
+		width: 510px;
+		margin: 60px auto 120px auto;
+		font-family: @fontB;
+		font-size: 24px;
+		text-transform: uppercase;
+		text-align: center;
+		line-height: 25px;
+		padding: 70px 0 35px 0;
+		border-top: 2px dashed #fff;
+		border-bottom: 2px dashed #fff;
+		position: relative;
+		clear: both;
+		background: url(img/bremont-bg.png) repeat-y top center;
+		&:before {
+			content: " ";
+			display: block;
+			width: 81px;
+			height: 81px;
+			position: absolute;
+			top: -40px;
+			left: 50%;
+			margin-left: -41px;
+			background: url(img/bremont-ring.png);
+		}
+		&:after {
+			content: "";
+			background: url(https://www.transparenttextures.com/patterns/otis-redding.png) repeat;
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			left: 50px;
+			width: 70%;
+			height: 100%;
+		}
+	}
+}
+
+.benefits {
+	width: 100%;
+	margin: -50px 0 0 0;
+	z-index: 3;
+	position: relative;
+	background: url(img/men.png) no-repeat calc(50% - 40%) 0;
+	
+}
+.benefits .wrapper {
+border: 1px solid #000;
+min-height: 500px;
+}
+
+
+.footer {
+	width: 100%;
+	height: 350px;
+	.bgcontent();
+	position: relative;
+	margin: 0 0 20px 0;
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		top: 5px; 
+		left: 0;
+		width: 100%;
+		height: 1px;
+		border-top: 1px dashed #aab5cb;
+	}	
+	&:after {
+		top: 225px; 
+	}
+}
