@@ -21,10 +21,21 @@ var   gulp = require('gulp'),
       rename = require('gulp-rename'), // Переименовывание
       notify  = require('gulp-notify'),
       prefix  = require('gulp-autoprefixer'), // Автопрефиксер
-      browsersync = require('browser-sync'); // Минификация JS;
+      browsersync = require('browser-sync'), // Минификация JS;
+      gulpStylelint = require('gulp-stylelint');
 
 /* Создаем задачи */	
 
+ 
+/* Задача less. Запускается командой "gulp less" */ 
+gulp.task('lintcss', function () {
+  return gulp.src('./src/less/*.less')
+  .pipe(gulpStylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }));
+});
  
 /* Задача less. Запускается командой "gulp less" */ 
 gulp.task('less', function () {
@@ -88,9 +99,10 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 });
 
 
-gulp.task('watch', ['browser-sync', 'html', 'img', 'less', 'fonts'], function() {
+gulp.task('watch', ['browser-sync', 'html', 'img', 'less', 'lintcss', 'fonts'], function() {
 	// При изменение файлов *.less в папке "less" и подпапках запускаем задачу less
-	gulp.watch('./src/less/**/*.less', ['less'])
+  gulp.watch('./src/less/**/*.less', ['less'])
+	gulp.watch('./src/less/**/*.less', ['lintcss'])
 	// При изменение файлов *.js папке "javascripts" и подпапках запускаем задачу js
 	gulp.watch('./src/js/**/*.js', ['js']) 
   // При изменение любых файлов .html в папке "src" и подпапках запускаем задачу html
