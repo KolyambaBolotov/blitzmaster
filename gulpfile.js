@@ -21,21 +21,10 @@ var   gulp = require('gulp'),
       rename = require('gulp-rename'), // Переименовывание
       notify  = require('gulp-notify'),
       prefix  = require('gulp-autoprefixer'), // Автопрефиксер
-      browsersync = require('browser-sync'), // Минификация JS;
-      gulpStylelint = require('gulp-stylelint');
+      browsersync = require('browser-sync'); // Минификация JS;
 
 /* Создаем задачи */	
 
- 
-/* Задача less. Запускается командой "gulp less" */ 
-gulp.task('lintcss', function () {
-  return gulp.src('./src/less/*.less')
-  .pipe(gulpStylelint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }));
-});
  
 /* Задача less. Запускается командой "gulp less" */ 
 gulp.task('less', function () {
@@ -80,6 +69,15 @@ gulp.task('img', function() {
 
 });
 
+
+gulp.task('vendor', function() {
+    gulp.src('./src/js/vendor/**/*') // берем любые файлы в папке и ее подпапках
+    .pipe(gulp.dest('./build/js/vendor/')) // результат пишем по указанному адресу
+    .pipe(browsersync.reload({stream: true})) // Обновляем 
+    .pipe(notify('gulp vendor -> done!'));
+
+});
+
 // Задача "fonts". Запускается командой "gulp fonts"
 gulp.task('fonts', function() {
     gulp.src('./src/fonts/**/*') // берем любые файлы в папке и ее подпапках
@@ -99,16 +97,17 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 });
 
 
-gulp.task('watch', ['browser-sync', 'html', 'img', 'less', 'lintcss', 'fonts'], function() {
+gulp.task('watch', ['browser-sync', 'html', 'img', 'js', 'vendor', 'less', 'fonts'], function() {
 	// При изменение файлов *.less в папке "less" и подпапках запускаем задачу less
   gulp.watch('./src/less/**/*.less', ['less'])
-	gulp.watch('./src/less/**/*.less', ['lintcss'])
 	// При изменение файлов *.js папке "javascripts" и подпапках запускаем задачу js
-	gulp.watch('./src/js/**/*.js', ['js']) 
+	gulp.watch('./src/js/*.js', ['js']) 
   // При изменение любых файлов .html в папке "src" и подпапках запускаем задачу html
   gulp.watch('./src/*.html', ['html']);
   // При изменение любых файлов .img в папке "src" и подпапках запускаем задачу html
-  gulp.watch('./src/img/*', ['img']);
+  gulp.watch('./src/img/**/*.*', ['img']);
+  // При изменение любых файлов .img в папке "src" и подпапках запускаем задачу html
+  gulp.watch('./src/js/vendor/**/*.*', ['vendor']);
 	// При изменение любых файлов .fonts в папке "src" и подпапках запускаем задачу html
 	gulp.watch('./src/fonts/**/*', ['fonts']);
 })

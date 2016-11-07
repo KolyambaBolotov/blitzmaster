@@ -11,9 +11,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
-    <link rel="stylesheet" type="text/css" href="main.min.css">
   </head>
   <body>
 
@@ -27,7 +25,7 @@
 		<div class="header__phone">
 			<div class="header__phone-item">8 (4012) 411-799</div>
 			<div class="header__phone-item">8 (901) 963-63-63</div>
-			<a class="header__phone-item header__phone-item--link" href="#">Заказать звонок</a>
+			<a class="header__phone-item header__phone-item--link js-open-modal" href="#callback">Заказать звонок</a>
 		</div>
 		<a class="header__fb-icon" href="#"></a>
 		<ul class="top-menu">
@@ -51,7 +49,7 @@
 		<div class="leadform">
 				<div class="leadform__wrapper leadform__wrapper--border">
 					<div class="leadform__text">Для бесплатного выезда мастера</div>
-					<div class="leadform__text offer__form-text--lg">звоните +7 (900) 900 00 00</div>
+					<div class="leadform__text leadform__text--lg">звоните +7 (900) 900 00 00</div>
 					<div class="leadform__text">или оставьте заявку</div>
 					<form class="leadform__form" action="">
 						<input class="leadform__form-input" type="text" placeholder="Ваш номер телефона" />
@@ -63,8 +61,12 @@
 			<div class="promo__banner promo__banner-bg">
 				<img src="img/banner-bg.jpg" alt="">
 			</div>
-			<div class="promo__banner-text"></div>
-			<a href="#" class="promo__link"></a>
+			<div class="promo__banner-text">
+				<div class="promo__banner-first"><span class="text">Весь сентябрь</span></div>
+				<div class="promo__banner-second"><span class="text">15%</span></div>
+				<div class="promo__banner-third"><span class="text">на установку розеток</span></div>
+			</div>
+			<a href="#callback" class="promo__link js-open-modal"></a>
 		</div>
 	</div>
 </div>
@@ -109,7 +111,7 @@
 			</li>
 		</ul>
 		<div class="img__remont">
-			Ремонт ювелирных изделий
+			<a href="https://www.smashingmagazine.com/wp-content/uploads/2013/03/progressive-loading.jpg" class="image-link">Ремонт ювелирных изделий</a>
 		</div>
 	</div>
 
@@ -194,14 +196,127 @@
 		</div>
 	</div>
 </div>
+<div class="reviews">
+	<div class="wrapper">
+		<div class="reviews__title section__title">Отзывы клиентов</div>
+<div class="carousel__wrapper">
+			<ul id="gallery" class="reviews__carousel js-bxslider">
+					<li class="item reviews__item">
+							<div class="reviews__avatar"><img src="img/rev1.png"></div>
+							<div class="reviews__text">
+								Задача организации, в особенности же начало повседневной работы по формированию позиции требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+							</div>
+							<div class="reviews__sign">
+							 	Валерий Петрович
+							</div>
+					</li>
+					<li class="item reviews__item">
+							<div class="reviews__avatar"><img src="img/rev2.png"></div>
+							<div class="reviews__text">
+								В особенности же начало повседневной работы по формированию позиции требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+							</div>
+							<div class="reviews__sign">
+							 	Анна Сергеевна
+							</div>
+					</li>
+					<li class="item reviews__item">
+							<div class="reviews__avatar"><img src="img/rev2.png"></div>
+							<div class="reviews__text">
+								В особенности же начало повседневной работы по формированию позиции требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+							</div>
+							<div class="reviews__sign">
+							 	Анна Сергеевна
+							</div>
+					</li>
+					<li class="item reviews__item">
+							<div class="reviews__avatar"><img src="img/rev2.png"></div>
+							<div class="reviews__text">
+								В особенности же начало повседневной работы по формированию позиции требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+							</div>
+							<div class="reviews__sign">
+							 	Анна Сергеевна
+							</div>
+					</li>
+					<li class="item reviews__item">
+							<div class="reviews__avatar"><img src="img/rev2.png"></div>
+							<div class="reviews__text">
+								В особенности же начало повседневной работы по формированию позиции требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям.
+							</div>
+							<div class="reviews__sign">
+							 	Анна Сергеевна
+							</div>
+					</li>
+			</ul>
+			</div>
+		<a href="#callback" title="Оставить отзыв" class="reviews__feedback js-open-modal">Оставить отзыв</a>
 
+	</div>
+</div>
 <div class="footer">
-	<div class="wrapper"></div>
+	<div class="footer__content">
+		<div class="wrapper">
+			<div class="footer__logo"></div>
+			<div class="footer__leadform">
+				<div class="footer__leadform-wrapper">
+					<form class="footer__leadform-form" action="">
+						<input class="footer__leadform-input" type="text" placeholder="Ваше имя" />
+						<input class="footer__leadform-input" type="text" placeholder="Ваш номер телефона" />
+						<input class="footer__leadform-button" type="submit" value="Вызвать мастера" />
+						<span class="error"></span>
+					</form>
+				</div>
+			</div>
+			<div class="footer__desc">
+				<div class="footer__desc-txt">Доверьте ремонт по дому</div>
+				<div class="footer__desc-txt footer__desc-txt--lg">профессионалам</div>
+			</div>
+			<div class="footer__info">
+				<div class="footer__info-adresse">г. Калининград,
+ул. Космонавта Леонова, 24</div>
+				<div class="footer__info-phone">
+					<p>+7 (900) 900 00 00</p>
+					<p>+7 (900) 900 00 00</p>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<div class="footer__copy">
+		<div class="wrapper">
+			<div class="footer__copy-text">© «Городская служба ремонта», 2016</div>
+			<div class="footer__copy-dev">
+				<p>Сделано в веб-студии "Мультисайт"</p>
+				<p>Разработка и продвижение сайтов</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="callback" class="modal mfp-hide">
+	<div class="modal__title"></div>
+	<form class="footer__leadform-form" action="">
+		<input class="footer__leadform-input" name="formname" type="text" placeholder="" />
+		<input class="footer__leadform-input" type="text" placeholder="Ваше имя" />
+		<input class="footer__leadform-input" type="text" placeholder="Ваш номер телефона" />
+		<input class="footer__leadform-button" type="submit" value="Отправить" />
+		<span class="error"></span>
+	</form>
 </div>
 
 
-    <link rel="stylesheet" type="text/css" href="libs.min.css">
-    <script src="js/libs/libs.min.js"></script> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="main.min.css">
+
+    <script src="http://bxslider.com/js/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="js/vendor/bxslider/jquery.bxslider.css">
+    <script src="js/vendor/bxslider/jquery.bxslider.min.js"></script>
+
+    <link rel="stylesheet" href="js/vendor/magnific-popup/magnific-popup.css">
+    <script src="js/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 
     <script src="js/common.min.js"></script>
