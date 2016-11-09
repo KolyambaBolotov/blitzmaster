@@ -567,20 +567,32 @@ body {
 .tabs {
 	padding: 0 0 40px 0;
 	border-bottom: 1px dashed #c0c0c0;
+	height: 250px;
 	&__list {
-		margin: 40px 0 0 0;
+		margin: 40px 0 50px 0;
 		padding: 0;
 		font-size: 0;
 		background-color: #274972;
 		overflow: inherit;
 		display: flex;
 	}
+	&__content{
+		height: auto;
+
+		&-box{
+		display: none;
+			&:after{
+				clear: both;
+			}
+			}	
+		}
+	
 	&__name {
 		font-size: 16px;
 		text-transform: uppercase;
 		display: inline-block;
 		color: #fff;
-		padding: 10px 20px;
+		padding: 10px 0;
 		cursor: pointer;
 		z-index: 1;
 		flex: 1;
@@ -609,6 +621,34 @@ body {
 			}
 		}
 	}
+}
+.price-table{
+	border-collapse: collapse;
+	font-size: 16px;
+	& tr:nth-child(odd){
+		background: #f7f7f7;
+	}
+	& tr{
+		& td:nth-child(2){
+			font-weight: bold;
+		}
+		& td{
+		}
+	}
+
+}
+.lowCase{
+	text-transform: lowercase;
+	font-size: 14px;
+	color: #666;
+}
+.left50{
+	width: 50%;
+	float: left;
+}
+.right50{
+	width:50%;
+	float:right;
 }
 .helper {
 	font-size: 0;

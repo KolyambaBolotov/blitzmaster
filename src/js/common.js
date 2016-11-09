@@ -24,6 +24,14 @@ $(".js-open-modal").click(function() {
 		slideWidth: 394,
 		slideMargin: 25
 	});
+	$(".tabs__list").children("li").click(function(){
+		$(this).addClass("tabs__name--active");
+		$(this).siblings().removeClass("tabs__name--active");
+
+		var num_active = $('.tabs__list').find(".tabs__name--active").index();
+		$(".tabs__content-box").css("display", "none");
+		$(".tabs__content-box").eq(num_active).css("display", "block");	
+	});
 
 
 });
