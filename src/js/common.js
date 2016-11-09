@@ -25,12 +25,23 @@ $(".js-open-modal").click(function() {
 		slideMargin: 25
 	});
 	$(".tabs__list").children("li").click(function(){
+		$('.call-me').css('display','none');
 		$(this).addClass("tabs__name--active");
 		$(this).siblings().removeClass("tabs__name--active");
 
 		var num_active = $('.tabs__list').find(".tabs__name--active").index();
 		$(".tabs__content-box").css("display", "none");
 		$(".tabs__content-box").eq(num_active).css("display", "block");	
+	});
+
+	$(".price-table tr").mouseover(function(){
+		var tr_pos = $(this).position();
+		$('.call-me').css('display','inline-block');
+		$('.call-me').css({"top" : tr_pos.top, "left" : tr_pos.left + 160});
+	});
+	$(".wrapper").mouseout(function(){
+		// $('.call-me').css('display','none');
+		 
 	});
 
 

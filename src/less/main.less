@@ -628,7 +628,14 @@ body {
 	& tr:nth-child(odd){
 		background: #f7f7f7;
 	}
-	& tr{
+	& tr:hover{
+		color: #f84148;
+		& .lowCase{
+			color: #f84148;
+		}
+		
+	}
+	& tr{		
 		& td:nth-child(2){
 			font-weight: bold;
 		}
@@ -636,6 +643,37 @@ body {
 		}
 	}
 
+}
+.call-me{
+	display: none;
+	position: absolute;
+	text-align: center;
+	top:0;
+	left: 0;
+	z-index: 10;
+	background: #f84148;
+	width: 125px;
+	height: 25px;
+	color: #fff;
+	text-decoration: none;
+	border: 0 none;
+	& ins{
+		border-bottom:1px dotted #fff;
+		text-decoration: none;
+	}
+	
+	&:before{
+		border: 9px solid transparent;
+	    border-right: 8px solid #f84148;
+	    content: "";
+	    display: block;
+	    width: 0;
+	    height: 0;
+	    position: absolute;
+	    left: -16px;
+	    top: 50%;
+	    margin-top: -9px;
+	}
 }
 .lowCase{
 	text-transform: lowercase;
